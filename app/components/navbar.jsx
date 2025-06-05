@@ -55,7 +55,12 @@ export default function Navbar() {
             className="text-neutral-700 dark:text-neutral-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition"
           >
             Translate
-          </Link>
+          </Link><Link
+              href="/contribute"
+              className="text-neutral-700 dark:text-neutral-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition"
+            >
+              contribute
+            </Link>
           {user && (
             <Link
               href="/profile"
