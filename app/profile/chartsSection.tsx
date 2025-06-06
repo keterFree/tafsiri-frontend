@@ -1,5 +1,5 @@
 // src/components/profile/ChartsSection.tsx
-import React, { useMemo } from "react";
+import React, { useMemo, useEffect, useState } from "react";
 import Card from "./card";
 import { Chart } from "react-google-charts";
 import {
@@ -20,6 +20,16 @@ interface ChartsSectionProps {
 }
 
 const ChartsSection: React.FC<ChartsSectionProps> = ({ stats }) => {
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 1200
+  );
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const sourceChartData = useMemo(() => {
     const entries = stats?.by_source ? Object.entries(stats.by_source) : [];
     return entries.length > 0
@@ -114,13 +124,14 @@ const ChartsSection: React.FC<ChartsSectionProps> = ({ stats }) => {
         </div>
         {sourceChartData ? (
           <Chart
+            key={windowWidth}
             chartType="PieChart"
             width="100%"
             height="300px"
             loader={<div className="text-center">Loading chart...</div>}
             data={sourceChartData}
             options={{
-              colors: ["#10B981", "#3B82F6", "#F59E0B"],
+              colors: ["#10B981", "#F59E0B", "#3B82F6"],
               pieHole: 0.4,
               legend: {
                 position: "labeled",
@@ -137,20 +148,32 @@ const ChartsSection: React.FC<ChartsSectionProps> = ({ stats }) => {
           </div>
         )}
       </Card>
-      {/* Daily Contributions Bar Chart */}
+
+      {/* Line Chart */}
       <Card className="bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-6">
         <div className="flex items-center mb-4">
           <div className="p-2 rounded-lg bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-300 mr-3">
-            {/* SVG icon */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
+                clipRule="evenodd"
+              />
+            </svg>
           </div>
           <h3 className="text-lg font-semibold">
-            Daily Contributions {stats?.daily_contributions?.length ?? 0}
+            Daily Contributions ({stats?.daily_contributions?.length ?? 0})
           </h3>
         </div>
 
         {stats?.daily_contributions?.length ? (
           <div style={{ width: "100%", height: 300 }}>
-            <ResponsiveContainer>
+            <ResponsiveContainer width="100%" height="100%">
               <LineChart
                 data={stats.daily_contributions.map((entry) => ({
                   date: new Date(entry.date).toLocaleDateString("en-US", {
@@ -199,7 +222,6 @@ const ChartsSection: React.FC<ChartsSectionProps> = ({ stats }) => {
           </div>
         )}
       </Card>
-      ;
     </div>
   );
 };
