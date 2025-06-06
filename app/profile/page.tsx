@@ -8,7 +8,7 @@ import ProfileHeader from "./profilehead";
 import StatsDashboard from "./statsDashboard";
 import ChartsSection from "./chartsSection";
 import TimelineSection from "./timeline";
-import CallToAction from "./callToAction";
+import CallToAction from "../dashboard/CallToAction";
 
 export default function ProfilePage() {
   const { user } = useAuth();
@@ -104,11 +104,11 @@ export default function ProfilePage() {
         </div>
 
         {stats && (
-          <>
+          <div className="mb-4">
             <StatsDashboard stats={stats} />
             <ChartsSection stats={stats} />
             <TimelineSection stats={stats} />
-          </>
+          </div>
         )}
 
         <CallToAction />
