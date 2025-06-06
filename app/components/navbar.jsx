@@ -27,7 +27,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-white dark:bg-neutral-900 border-b border-green-700 px-6 py-4">
+    <nav className="bg-emerald-50/50 dark:bg-neutral-900 border-b border-green-700 px-6 py-4">
       <div className="flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">
