@@ -1,10 +1,16 @@
-import './globals.css';
-import { AuthProvider } from './context/authcontext';
-import type { Metadata } from 'next';
+import "./globals.css";
+import { AuthProvider } from "./context/authcontext";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Tafsiri App',
-  description: 'Translation tool powered by Firebase Auth',
+  title: "Tafsiri | Preserving Kenyan Languages",
+  description:
+    "Translation tool powered by Firebase Auth and supports Kiswahili, Kalenjin, Dholuo, Gikuyu, Somali, Maasai.",
+  icons: {
+    icon: "/favicon.ico", // Your favicon in /public/favicon.ico
+    apple: "/apple-touch-icon.png", // Optional for iOS
+  },
+  themeColor: "#16610E", // Customize your theme color
 };
 
 export default function RootLayout({
@@ -13,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
+    <html lang="en">
       <body>
         <AuthProvider>{children}</AuthProvider>
       </body>
