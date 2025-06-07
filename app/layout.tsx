@@ -5,9 +5,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Tafsiri | Preserving Kenyan Languages",
   description:
-    "Translation tool powered by Firebase Auth and supports Kiswahili, Kalenjin, Dholuo, Gikuyu, Somali, Maasai.",
+    "Preserving and promoting Kenya's indigenous languages through open-source technology.",
   icons: {
-    icon: "/favicon.ico", // Your favicon in /public/favicon.ico
+    icon: "/taffavicon.ico", // Your favicon in /public/favicon.ico
     apple: "/apple-touch-icon.png", // Optional for iOS
   },
 };
