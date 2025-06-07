@@ -8,6 +8,7 @@ import CallToAction from "./CallToAction";
 import Footer from "../components/Footer";
 import Navbar from "../components/navbar";
 
+
 export default function HomePage() {
   return (
     <>
@@ -26,9 +27,12 @@ export default function HomePage() {
               width: 1200,
               height: 630,
               alt: "Tafsiri.site - Bridging Kenyan Languages with English",
+              type: "image/jpeg",
             },
           ],
           site_name: "Tafsiri",
+          locale: "en_KE",
+          type: "website",
         }}
         twitter={{
           handle: "@tafsiri_site",
@@ -40,6 +44,14 @@ export default function HomePage() {
             name: "keywords",
             content:
               "Tafsiri, translate Kiswahili, English to Kalenjin, Gikuyu translation, Somali to English, Kenyan languages, Dholuo, Maasai, language tools Kenya, cultural preservation, African language translation",
+          },
+          {
+            name: "robots",
+            content: "index, follow",
+          },
+          {
+            name: "author",
+            content: "Tafsiri Team",
           },
         ]}
       />

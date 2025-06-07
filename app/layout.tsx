@@ -10,7 +10,6 @@ export const metadata: Metadata = {
     icon: "/favicon.ico", // Your favicon in /public/favicon.ico
     apple: "/apple-touch-icon.png", // Optional for iOS
   },
-  themeColor: "#16610E", // Customize your theme color
 };
 
 export default function RootLayout({
