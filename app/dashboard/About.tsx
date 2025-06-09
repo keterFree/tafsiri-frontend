@@ -2,7 +2,10 @@ import Link from "next/link";
 
 export default function About() {
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50 dark:from-neutral-900 dark:to-neutral-800">
+    <section
+      id="about"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50 dark:from-neutral-900 dark:to-neutral-800"
+    >
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 mb-4">
@@ -18,7 +21,6 @@ export default function About() {
             communities
           </p>
           <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Indigenous Kenyan languages are at risk of being digitally excluded.
             Tafsiri is a community-first effort to build tools that preserve and
             promote these languages in the modern world.
           </p>
@@ -26,6 +28,25 @@ export default function About() {
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
+            <p className="text-center text-emerald-600 dark:text-emerald-400 text-3xl ">
+              AI for good
+            </p>
+            <div className="flex items-start space-x-4">
+              <div className="flex-shrink-0 mt-1.5">
+                <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400">
+                  <CpuIcon className="h-5 w-5" />
+                </div>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                  Technology
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Using open-source machine learning to create accessible
+                  translation tools that work offline for rural areas.
+                </p>
+              </div>
+            </div>
             <div className="flex items-start space-x-4">
               <div className="flex-shrink-0 mt-1.5">
                 <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">
@@ -57,23 +78,6 @@ export default function About() {
                 <p className="text-gray-600 dark:text-gray-400">
                   Every translation improvement comes from native speakers.
                   We're building tools with and for the communities we serve.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0 mt-1.5">
-                <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400">
-                  <CpuIcon className="h-5 w-5" />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                  Technology
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  Using open-source machine learning to create accessible
-                  translation tools that work offline for rural areas.
                 </p>
               </div>
             </div>

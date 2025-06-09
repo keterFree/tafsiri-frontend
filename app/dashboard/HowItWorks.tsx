@@ -3,7 +3,7 @@ import { Wand2, Upload, Languages } from "lucide-react";
 const steps = [
   {
     title: "1. Translate",
-    desc: "Use our web-based translator to convert English sentences into Kalenjin. It’s simple, fast, and evolving with every contribution.",
+    desc: "Use our AI-powered translator to convert English sentences into Kalenjin. It’s simple, fast, and evolving with every contribution.",
     icon: Wand2,
   },
   {
