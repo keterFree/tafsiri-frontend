@@ -1,3 +1,6 @@
+"use client";
+
+// import { NextSeo } from "next-seo";
 import Hero from "./Hero";
 import About from "./About";
 import HowItWorks from "./HowItWorks";
